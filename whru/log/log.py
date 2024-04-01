@@ -1,7 +1,7 @@
 import logging
 
 
-def get_logger(log_level, name):
+def get_logger(log_level, logger_name):
     # 2023-08-02 19:23:44 [0] "/home/whr/fs_gnn/dist_gcn_train.py", line 844, DEBUG: torch.Size([512, 500])
     # note: 如果是多进程，对logging模块的初始化需要在每个进程中都运行一次
     # 并且，logging模块是线程安全的，但并不是进程安全的
@@ -16,7 +16,7 @@ def get_logger(log_level, name):
     handler.setLevel(logging._nameToLevel[log_level])
     formatter = logging.Formatter(fmt=log_format)
     handler.setFormatter(formatter)
-    logger = logging.getLogger(name)
+    logger = logging.getLogger(logger_name)
     logger.setLevel(logging._nameToLevel[log_level])
     logger.addHandler(handler)
 
