@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='whru',
-    version='0.3',
+    version='0.4',
     description='My custom Python module',
     author='whr819987540',
     author_email='steeliron550@gmail.com',
