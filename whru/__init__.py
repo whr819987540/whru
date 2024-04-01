@@ -1,3 +1,3 @@
 from .log import log
 from .utils import utils
-from .tensorboard import log, read
+from .tensorboard import write, read

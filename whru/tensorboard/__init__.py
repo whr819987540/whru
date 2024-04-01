@@ -1,2 +1,2 @@
-from .log import *
+from .write import *
 from .read import *
