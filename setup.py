@@ -2,12 +2,13 @@ from setuptools import setup
 
 setup(
     name='whru',
-    version='0.1',
+    version='0.2',
     description='My custom Python module',
     author='whr819987540',
-    author_email='819987540@qq.com',
+    author_email='steeliron550@gmail.com',
     packages=['whru'],
     install_requires=[
-        # 列出模块的依赖包
+        "torch>=1.7.0",
+        "tensorflow>=2.0.2",
     ],
 )
