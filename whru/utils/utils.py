@@ -1,6 +1,9 @@
 import inspect
 import os
 from datetime import datetime
+import torch
+import random
+import numpy
 
 
 def get_current_function_name() -> str:
@@ -35,3 +38,19 @@ def get_abs_path(file):
     return abs_path(__file__)
     """
     return os.path.abspath(file)
+
+
+def set_seed(
+    seed: int = 0,
+    numpy_flag: bool = True,
+    random_flag: bool = True,
+    torch_flag: bool = True,
+):
+    if numpy_flag:
+        numpy.random.seed(seed)
+    if random_flag:
+        random.seed(seed)
+    if torch_flag:
+        # https://pytorch.org/docs/stable/notes/randomness.html#pytorch-random-number-generator
+        # You can use torch.manual_seed() to seed the RNG for all devices (both CPU and CUDA):
+        torch.manual_seed(seed)
